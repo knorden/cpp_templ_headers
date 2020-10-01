@@ -8,8 +8,15 @@ class DEBUGGER {
   bool debug;
   bool error;
 
-  void _typecastConstr(const int val) { val == 1 ? debug = 1 : debug = 0; }
-  void _debug_ON(const int val) { _typecastConstr(val); }
+  void _typecastConstr(int val) {
+    static_cast<int>(val) == 1 ? debug = 1 : debug = 0;
+  }
+  void _debug_SWITCH(const int val) { _typecastConstr(val); }
+  void _debug_ON() {
+    if (!debug)
+      debug = true;
+    error = false;
+  }
   void _debug_OFF() {
     if (debug)
       error = debug = false;
@@ -17,8 +24,13 @@ class DEBUGGER {
 
  public:
   // constructor default to OFF.
-  explicit DEBUGGER() { error = debug = false; }
-  DEBUGGER(int val) { _typecastConstr(val); }
+  explicit DEBUGGER() : debug(false), error(false) {}
+  DEBUGGER(int val) {
+    _typecastConstr(val);
+    error = false;
+  }
+
+  void operator=(int val) { _debug_SWITCH(val); }
 
   //   void operator=(bool isDb) {
   //     if (isDb == true) {
@@ -39,7 +51,7 @@ class DEBUGGER {
   void printDBG() {
     std::cout << "-------------------------------------------\n";
     std::cout << ">>>>>>> \"THIS DEBUGGER INSTANCE\":  debug= " << debug
-              << "\n";
+              << std::endl;
     std::cout << "\t\t\t\t   error= " << error << std::endl;
     std::cout << "-------------------------------------------\n\n";
   }
