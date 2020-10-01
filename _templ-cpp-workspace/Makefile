@@ -1,5 +1,5 @@
 ##################################################################
-## MAKEFILE: TEMPLATE		              			##
+## MAKEFILE: TEMPLATE                                           ##
 ##################################################################
 HDIR 		:= hdr
 SDIR		:= src
@@ -26,11 +26,11 @@ $(ODIR)/%.o : $(SDIR)/%.cpp | $(ODIR)
 	$(CXX) -c $(CXXFLAGS) $^ -o $@
 
 $(ODIR):
-	if [ ! -d "$(ODIR)" ]; then mkdir $(ODIR); fi
+	@if [ ! -d "$(ODIR)" ]; then mkdir $(ODIR); fi
 
 ##################################################################
-## CLEAN TASK							##
+## CLEAN TASK:                                                  ##
 ##################################################################
 .PHONY: clean
 clean:
-	rm $(EXET) $(OBJS)
+	rm -r $(EXET) $(ODIR)
