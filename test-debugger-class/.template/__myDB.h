@@ -6,7 +6,7 @@ struct DEBUGGER {
   bool debug;
   bool error;
 
-  explicit DEBUGGER(bool isDb = false) : debug(false), error(false) {}
+  explicit DEBUGGER(bool isDb) : debug(false), error(false) {}
 
   void operator=(bool isDb) {
     if (isDb == true) {
