@@ -84,19 +84,11 @@ class BinST {
 
   /* Clone a passed in tree, returns pointer to new tree */
   Node<T>* _hidden_cloneTree(Node<T>* node) {
-<<<<<<< HEAD:_dtl/__myBinST_OO_binding.h
     if (!node)
       return nullptr;
     else
       return new Node<T>(node->value, _hidden_cloneTree(node->l),
                          _hidden_cloneTree(node->r));
-=======
-    Node<T>* nptr = nullptr;
-    (!node) ? nptr = nullptr
-            : nptr = new Node<T>(node->value, _hidden_cloneTree(node->l),
-                                 _hidden_cloneTree(node->r));
-    return nptr;
->>>>>>> 1b2571f3b456e316b83e84f7f65589aa35026898:__mybinsearchtree.h
   }
 
   void _hidden_destroyBranch(Node<T>* b) {
@@ -231,7 +223,6 @@ class BinST {
   }
 
   bool _hidden_checkIf_val_exists(Node<T>* root, T val) {
-<<<<<<< HEAD:_dtl/__myBinST_OO_binding.h
     bool isVal = false;
     (!root) ? isVal = false
             : (root->value == val)
@@ -240,16 +231,6 @@ class BinST {
                         ? isVal = (_hidden_checkIf_val_exists(root->l, val))
                         : isVal = (_hidden_checkIf_val_exists(root->r, val));
     return isVal;
-=======
-    bool checked = false;
-    (!root) ? checked = false
-            : (root->value == val)
-                  ? checked = true
-                  : (root->value > val)
-                        ? checked = (_hidden_checkIf_val_exists(root->l, val))
-                        : checked = (_hidden_checkIf_val_exists(root->r, val));
-    return checked;
->>>>>>> 1b2571f3b456e316b83e84f7f65589aa35026898:__mybinsearchtree.h
   }
 
  public:
