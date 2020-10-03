@@ -35,7 +35,9 @@ int main() {
 
   // testBST();
 
-  testMyTemplate();
+  // testMyTemplate();
+
+  anotherTest();
 
   return 0;
 }

@@ -4,5 +4,7 @@
 // #include "__myBinST.h"
 #include "__myBinST_OO_binding.h"
 void testMyTemplate();
+void anotherTest();
+
 
 #endif

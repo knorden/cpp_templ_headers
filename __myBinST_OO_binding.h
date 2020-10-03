@@ -182,8 +182,8 @@ class BinST {
   void _hidden_printLongestPath(Node<T>* root) {
     if (!root)
       return;
-    std::cout << root->val << ' ';
-    if (__hidden_getHeight(root->l) > _hidden_getHeight(root->r)) {
+    std::cout << root->value << ' ';
+    if (_hidden_getHeight(root->l) > _hidden_getHeight(root->r)) {
       _hidden_printLongestPath(root->l);
     } else {
       _hidden_printLongestPath(root->r);

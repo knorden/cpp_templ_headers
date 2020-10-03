@@ -11,6 +11,7 @@
 				"-Wconversion",
 				"-pedantic",
 				"-Ihdr",
+				"-I/home/karl/git.mine/cpp/templ_headers/",
 				"-g",
 				"${workspaceFolder}/src/*.cpp",
 				"-o",

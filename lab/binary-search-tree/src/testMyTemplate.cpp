@@ -70,3 +70,17 @@ void testMyTemplate() {
 
   std::cout << "\n\n\nEnd of Test.\nAll trees destroyed." << std::endl;
 }
+
+void anotherTest() {
+  std::cout << "ANOTHER TEST" << std::endl;
+
+  BinST<int> pretr{65, 67, 66, 73, 70, 71, 74, 68, 72, 75};
+  BinST<int> intr{73, 66, 67, 70, 74, 71, 65, 68, 75, 72};
+
+  pretr.debug_on();
+  intr.debug_on();
+
+  pretr.printLongestPath();
+  std::cout << std::endl;
+  intr.printLongestPath();
+}
